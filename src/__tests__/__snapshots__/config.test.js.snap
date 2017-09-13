@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config config works 1`] = `
+Array [
+  "getParametersByPath",
+  Object {
+    "Path": "/test/textpress-ci",
+    "Recursive": true,
+    "WithDecryption": true,
+  },
+  [Function],
+]
+`;
+
+exports[`config extractRemoteParameters works with empty config 1`] = `Object {}`;
+
+exports[`config extractRemoteParameters works with stage prefix 1`] = `
+Object {
+  "jenkins.auth": "/production/textpress-ci/jenkins/auth",
+  "jenkins.baseUrl": "/production/textpress-ci/jenkins/baseUrl",
+  "jenkins.token": "/production/textpress-ci/jenkins/token",
+  "signatureSecret": "/production/textpress-ci/signatureSecret",
+}
+`;
+
+exports[`config extractRemoteParameters works without stage prefix 1`] = `
+Object {
+  "jenkins.auth": "/textpress-ci/jenkins/auth",
+  "jenkins.baseUrl": "/textpress-ci/jenkins/baseUrl",
+  "jenkins.token": "/textpress-ci/jenkins/token",
+  "signatureSecret": "/textpress-ci/signatureSecret",
+}
+`;
+
+exports[`config loadConfig works 1`] = `
+Array [
+  "getParametersByPath",
+  Object {
+    "Path": "/test/textpress-ci",
+    "Recursive": true,
+    "WithDecryption": true,
+  },
+  [Function],
+]
+`;

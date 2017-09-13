@@ -1,0 +1,9 @@
+{
+  "signatureSecret": "@/textpress-ci/signatureSecret",
+  "jenkins": {
+    "baseUrl": "@/textpress-ci/jenkins/baseUrl",
+    "auth": "@/textpress-ci/jenkins/auth",
+    "token": "@/textpress-ci/jenkins/token"
+  },
+  "port": 4000
+}

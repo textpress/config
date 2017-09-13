@@ -1,0 +1,29 @@
+{
+  "Parameters": [
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/signatureSecret",
+      "Value": "signatureSecret value"
+    },
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/jenkins/baseUrl",
+      "Value": "http://localhost"
+    },
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/jenkins/auth/user",
+      "Value": "jenkins/auth/user value"
+    },
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/jenkins/auth/password",
+      "Value": "jenkins/auth/password value"
+    },
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/jenkins/token",
+      "Value": "jenkins/token value"
+    }
+  ]
+}

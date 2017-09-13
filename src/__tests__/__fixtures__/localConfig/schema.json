@@ -1,0 +1,41 @@
+{
+  "defaultValue": {
+    "format": "String",
+    "default": "THIS IS DEFAULT VALUE"
+  },
+  "port": {
+    "doc": "The port to bind.",
+    "format": "port",
+    "default": 4010,
+    "env": "PORT"
+  },
+  "signatureSecret": {
+    "doc": "GitHub signature secret",
+    "format": "String",
+    "default": null
+  },
+  "jenkins": {
+    "baseUrl": {
+      "doc": "Jenkins base url",
+      "format": "url",
+      "default": null
+    },
+    "auth": {
+      "user": {
+        "doc": "Jenkins user name",
+        "format": "String",
+        "default": null
+      },
+      "password": {
+        "doc": "Jenkins user token/password",
+        "format": "String",
+        "default": null
+      }
+    },
+    "token": {
+      "doc": "Jenkins token to remotely start build",
+      "format": "String",
+      "default": null
+    }
+  }
+}

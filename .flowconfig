@@ -1,0 +1,10 @@
+[options]
+module.name_mapper='^/\(.*\)$' -> '<PROJECT_ROOT>/\1'
+
+module.ignore_non_literal_requires=true
+
+unsafe.enable_getters_and_setters=true
+
+suppress_comment= \\(.\\|\n\\)*\\$FlowIssue
+
+[ignore]
