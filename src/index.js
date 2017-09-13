@@ -45,7 +45,7 @@ function loadConfigFile( root, name, required ) {
             return JSON.parse( fs.readFileSync( filePath, { encoding: "utf8" } ) );
         if ( !required )
             return {};
-    } catch( x ) {
+    } catch ( x ) {
         throw new ConfigError( `Cannot read config file: ${name}`, x )
     }
     throw new ConfigError( `Required config file doesn't exist: ${name}`, filePath );
@@ -106,7 +106,7 @@ async function loadRemoteConfig( path, region ) {
     );
 }
 
-function loadLocalFiles( root ){
+function loadLocalFiles( root ) {
     const schema = defaultsDeep(
         loadConfigFile( root, "schema", true ),
         minSchema
@@ -153,8 +153,8 @@ function combine( schema, config ) {
     combiner.validate();
     const result = combiner.getProperties();
     const string = combiner.toString();
-    result.toString = function() { return string; };
-    result.inspect = function() { return string; };
+    result.toString = function () { return string; };
+    result.inspect = function () { return string; };
     return Immutable( result );
 }
 
@@ -189,7 +189,7 @@ const cache = {};
 
 export default async function config( stage: ?string, forceReload: boolean = false ) {
     const cacheKey = stage || ".empty";
-    const result = !forceReload && cache[cacheKey] || await loadConfig( stage );
-    cache[cacheKey] = result;
+    const result = !forceReload && cache[ cacheKey ] || await loadConfig( stage );
+    cache[ cacheKey ] = result;
     return result;
 }
