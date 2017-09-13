@@ -1,0 +1,12 @@
+{
+  "signatureSecret": "!!!SENSITIVE!!! signatureSecret value",
+  "jenkins": {
+    "baseUrl": "http://localhost",
+    "auth": {
+      "user": "!!!SENSITIVE!!! jenkins/auth/user value",
+      "password": "!!!SENSITIVE!!! jenkins/auth/password value"
+    },
+    "token": "!!!SENSITIVE!!! jenkins/token value"
+  },
+  "port": 4000
+}

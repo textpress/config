@@ -138,6 +138,18 @@ describe( "config", () => {
             expect( cfg1 ).toBe( cfg2 );
         } );
 
+        it( "doesn't print sensitive data with toString()", async () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "sensitiveConfig" );
+            const result = await config.default( "test", true );
+            expect( result.toString() ).toMatchSnapshot();
+        } );
+
+        it( "doesn't print sensitive data with inspect()", async () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "sensitiveConfig" );
+            const result = await config.default( "test", true );
+            expect( result.inspect() ).toMatchSnapshot();
+        } );
+
     } );
 
 } );

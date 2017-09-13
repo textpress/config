@@ -151,10 +151,11 @@ function combine( schema, config ) {
     const combiner = convict( schema );
     combiner.load( config );
     combiner.validate();
-    return Immutable( reduce( Object.keys( schema ), ( result, key ) => {
-        result[key] = combiner.get( key );
-        return result;
-    }, {} ) );
+    const result = combiner.getProperties();
+    const string = combiner.toString();
+    result.toString = function() { return string; };
+    result.inspect = function() { return string; };
+    return Immutable( result );
 }
 
 function loadConfigImpl( postProcessor ) {
@@ -186,9 +187,9 @@ export function loadLocalConfig() {
 
 const cache = {};
 
-export default async function config( stage: ?string ) {
+export default async function config( stage: ?string, forceReload: boolean = false ) {
     const cacheKey = stage || ".empty";
-    const result = cache[cacheKey] || await loadConfig( stage );
+    const result = !forceReload && cache[cacheKey] || await loadConfig( stage );
     cache[cacheKey] = result;
     return result;
 }
