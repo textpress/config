@@ -1,6 +1,6 @@
 {
   "name": "@textpress/config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Config from local files with ability to pull values from SSM",
   "main": "lib/index.js",
   "scripts": {
