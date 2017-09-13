@@ -14,8 +14,7 @@ gulp.task( "build", [ "copy", "babel" ] );
 
 gulp.task( "clean", () => {
     return gulp.src( [ buildFolder ], { read: false } )
-        .pipe( clean() )
-    ;
+        .pipe( clean() );
 } );
 
 gulp.task( "copy", [ "clean" ], () => {
@@ -33,6 +32,6 @@ gulp.task( "babel", [ "clean" ], () => {
     return gulp.src( [ "src/**/*.js", "!**/__tests__", "!**/__tests__/**" ] )
         .pipe( sourcemaps.init() )
         .pipe( babel() )
-        .pipe( sourcemaps.write() )
+        .pipe( sourcemaps.write( "." ) )
         .pipe( gulp.dest( buildFolder ) );
 } );
