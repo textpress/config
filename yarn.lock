@@ -32,7 +32,7 @@
     babel-preset-bluebird ">=1.0.1"
     babel-preset-env ">=1.6.0"
 
-"@textpress/eslint-config-textpress@^0.0.6":
+"@textpress/eslint-config-textpress@>=0.0.6":
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/@textpress/eslint-config-textpress/-/eslint-config-textpress-0.0.6.tgz#b8d52b613fdea97017483dc2508ff848484d7026"
   dependencies:
