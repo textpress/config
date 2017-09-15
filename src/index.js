@@ -185,6 +185,12 @@ export function loadLocalConfig() {
     return loadConfigImpl( combine );
 }
 
+let localCache = null;
+export function localConfig( forceReload: boolean = false ) {
+    localCache = !forceReload && localCache || loadLocalConfig();
+    return localCache;
+}
+
 const cache = {};
 
 export default async function config( stage: ?string, forceReload: boolean = false ) {

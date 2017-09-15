@@ -79,3 +79,39 @@ Array [
   [Function],
 ]
 `;
+
+exports[`config localConfig doesn't print sensitive data with inspect() 1`] = `
+"{
+  \\"defaultValue\\": \\"THIS IS DEFAULT VALUE\\",
+  \\"port\\": 4000,
+  \\"signatureSecret\\": \\"[Sensitive]\\",
+  \\"jenkins\\": {
+    \\"baseUrl\\": \\"http://localhost\\",
+    \\"auth\\": {
+      \\"user\\": \\"[Sensitive]\\",
+      \\"password\\": \\"[Sensitive]\\"
+    },
+    \\"token\\": \\"[Sensitive]\\"
+  },
+  \\"env\\": \\"test\\",
+  \\"SSMRegion\\": \\"us-east-1\\"
+}"
+`;
+
+exports[`config localConfig doesn't print sensitive data with toString() 1`] = `
+"{
+  \\"defaultValue\\": \\"THIS IS DEFAULT VALUE\\",
+  \\"port\\": 4000,
+  \\"signatureSecret\\": \\"[Sensitive]\\",
+  \\"jenkins\\": {
+    \\"baseUrl\\": \\"http://localhost\\",
+    \\"auth\\": {
+      \\"user\\": \\"[Sensitive]\\",
+      \\"password\\": \\"[Sensitive]\\"
+    },
+    \\"token\\": \\"[Sensitive]\\"
+  },
+  \\"env\\": \\"test\\",
+  \\"SSMRegion\\": \\"us-east-1\\"
+}"
+`;

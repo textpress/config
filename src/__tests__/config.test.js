@@ -124,18 +124,44 @@ describe( "config", () => {
 
     } );
 
+    describe( "localConfig", () => {
+
+        it( "works", () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "localConfig" );
+            const cfg1 = config.localConfig();
+            const cfg2 = config.localConfig();
+            expect( cfg1 ).toBe( cfg2 );
+            expect( ssmStub.called ).toBe( false );
+            expect( Immutable.isImmutable( cfg1 ) ).toBe( true );
+            expect( cfg1 ).toMatchObject( expectedConfig );
+        } );
+
+        it( "doesn't print sensitive data with toString()", () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "sensitiveConfig" );
+            const result = config.localConfig( true );
+            expect( result.toString() ).toMatchSnapshot();
+        } );
+
+        it( "doesn't print sensitive data with inspect()", async () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "sensitiveConfig" );
+            const result = config.localConfig( true );
+            expect( result.inspect() ).toMatchSnapshot();
+        } );
+
+    } );
+
     describe( "config", () => {
 
         it( "works", async () => {
             process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "remoteConfig" );
             const cfg1 = await config.default( "test" );
             const cfg2 = await config.default( "test" );
+            expect( cfg1 ).toBe( cfg2 );
             expect( ssmStub.calledOnce ).toBe( true );
             expect( ssmStub.args[0] ).toMatchSnapshot();
             expect( Immutable.isImmutable( cfg1 ) ).toBe( true );
             expect( Immutable.isImmutable( cfg2 ) ).toBe( true );
             expect( cfg1 ).toMatchObject( expectedConfig );
-            expect( cfg1 ).toBe( cfg2 );
         } );
 
         it( "doesn't print sensitive data with toString()", async () => {
