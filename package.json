@@ -12,7 +12,7 @@
     "bump": "gulp bump --part",
     "ci-test": "jest",
     "ci-build": "gulp build",
-    "ci-release-note": "conventional-github-releaser -p eslint"
+    "ci-release-notes": "conventional-github-releaser -p eslint"
   },
   "jest": {
     "coverageDirectory": "<rootDir>/.jest-coverage",
