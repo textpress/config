@@ -16,7 +16,10 @@
   },
   "jest": {
     "coverageDirectory": "<rootDir>/.jest-coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.js"
+    ]
   },
   "devDependencies": {
     "@textpress/babel-preset-textpress": ">=0.1.0",
