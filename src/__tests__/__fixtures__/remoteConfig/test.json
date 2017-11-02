@@ -5,5 +5,6 @@
     "auth": "@/textpress-ci/jenkins/auth",
     "token": "@/textpress-ci/jenkins/token"
   },
+  "github": "@/textpress-ci/github",
   "port": 4000
 }

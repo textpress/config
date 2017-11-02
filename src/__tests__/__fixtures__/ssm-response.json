@@ -24,6 +24,11 @@
       "Type": "String",
       "Name": "/test/textpress-ci/jenkins/token",
       "Value": "jenkins/token value"
+    },
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/github/token",
+      "Value": "github/token value"
     }
   ]
 }

@@ -11,7 +11,7 @@ import sinon from "sinon";
 
 import expectedConfig from "./__fixtures__/expected.json";
 import remoteTestConfig from "./__fixtures__/remoteConfig/test.json";
-import ssmTestsResponse from "./__fixtures__/ssm-tests.json";
+import ssmTestsResponse from "./__fixtures__/ssm-response.json";
 
 
 describe( "config", () => {
