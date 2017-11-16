@@ -1,4 +1,3 @@
-// @flow
 "use strict";
 
 import * as config from "..";

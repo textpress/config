@@ -1,4 +1,3 @@
-// @flow
 "use strict";
 
 import ConfigError from "./errors";
@@ -51,7 +50,7 @@ function loadConfigFile( root, name, required ) {
     throw new ConfigError( `Required config file doesn't exist: ${name}`, filePath );
 }
 
-function processParameter( stagePrefix, value, keyPath: string, result: { [string]: any } ) {
+function processParameter( stagePrefix, value, keyPath, result ) {
     if ( isString( value ) && value.startsWith( "@/" ) ) {
         result[ keyPath ] = `${stagePrefix}${value.substr( 1 )}`;
         return result;
@@ -61,7 +60,7 @@ function processParameter( stagePrefix, value, keyPath: string, result: { [strin
     return result;
 }
 
-export function extractRemoteParameters( stagePrefix: string, config: { [string]: any } | Array<any>, path: string = "", result: { [string]: any } = {} ) {
+export function extractRemoteParameters( stagePrefix, config, path = "", result = {} ) {
     const keyPath = isArray( config )
         ? ( key ) => `${path}[${key}]`
         : ( key ) => path ? `${path}.${key}` : `${key}`
@@ -73,14 +72,14 @@ export function extractRemoteParameters( stagePrefix: string, config: { [string]
     );
 }
 
-export function findCommonRemoteParametersRoot( remoteParams: { [string]: string } ) {
+export function findCommonRemoteParametersRoot( remoteParams ) {
     const rootParts = reduce(
         remoteParams,
         ( rootParts, value ) => {
             const valueParts = value.split( "/" );
             if ( !rootParts )
                 return valueParts;
-            const index = findIndex( rootParts, ( value: string, index: number ) => { return valueParts[ index ] !== value; } );
+            const index = findIndex( rootParts, ( value, index ) => { return valueParts[ index ] !== value; } );
             if ( index === -1 )
                 return rootParts;
             rootParts.splice( index );
@@ -171,7 +170,7 @@ function loadConfigImpl( postProcessor ) {
 
 }
 
-export async function loadConfig( stage: ?string ) {
+export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
         const region = config.SSMRegion || get( schema, "SSMRegion.default", null );
         if ( !region )
@@ -186,14 +185,14 @@ export function loadLocalConfig() {
 }
 
 let localCache = null;
-export function localConfig( forceReload: boolean = false ) {
+export function localConfig( forceReload = false ) {
     localCache = !forceReload && localCache || loadLocalConfig();
     return localCache;
 }
 
 const cache = {};
 
-export default async function config( stage: ?string, forceReload: boolean = false ) {
+export default async function config( stage, forceReload = false ) {
     const cacheKey = stage || ".empty";
     const result = !forceReload && cache[ cacheKey ] || await loadConfig( stage );
     cache[ cacheKey ] = result;

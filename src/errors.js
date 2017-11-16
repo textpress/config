@@ -1,10 +1,9 @@
-// @flow
 "use strict";
 
 import ExtendableError from "@textpress/extendable-error";
 
 export class ConfigError extends ExtendableError {
-    constructor( message: string, extra?: mixed ) {
+    constructor( message, extra ) {
         super( message, extra );
     }
 }
