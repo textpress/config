@@ -1,51 +1,58 @@
 {
-  "name": "@textpress/config",
-  "version": "0.3.0",
-  "description": "Config from local files with ability to pull values from SSM",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "jest --coverage --colors",
-    "test-update-snapshots": "jest -u",
-    "flow": "flow check",
-    "flow-trace": "flow check --traces 10",
-    "flow-install-types": "flow-typed install --overwrite",
-    "bump": "gulp bump --part",
-    "ci-test": "jest",
-    "ci-build": "gulp build",
-    "ci-release-notes": "conventional-github-releaser -p eslint"
-  },
-  "jest": {
-    "coverageDirectory": "<rootDir>/.jest-coverage",
-    "testEnvironment": "node",
-    "testMatch": [
-      "**/__tests__/**/*.test.js"
-    ]
-  },
-  "devDependencies": {
-    "@textpress/babel-preset-textpress": ">=0.1.0",
-    "@textpress/eslint-config-textpress": ">=0.0.6",
-    "@textpress/gulp-bump-version": ">=0.2.0",
-    "conventional-github-releaser": "^1.1.12",
-    "eslint": "^4.6.1",
-    "flow-bin": "^0.54.1",
-    "flow-copy-source": "^1.2.1",
-    "flow-typed": "^2.1.5",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0",
-    "gulp-clean": "^0.3.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.6.1",
-    "jest": "^21.0.2",
-    "merge-stream": "^1.0.1",
-    "rimraf": "^2.6.2",
-    "sinon": "^3.2.1"
-  },
-  "dependencies": {
-    "@textpress/extendable-error": ">=0.4.0",
-    "aws-sdk": ">=2.114.0",
-    "bluebird": ">=3.5.0",
-    "convict": ">=4.0.0",
-    "lodash": ">=4.17.4",
-    "seamless-immutable": ">=7.1.2"
-  }
+    "name": "@textpress/config",
+    "version": "0.3.0",
+    "description": "Config from local files with ability to pull values from SSM",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "jest --coverage --colors",
+        "test-update-snapshots": "jest -u",
+        "flow": "flow check",
+        "flow-trace": "flow check --traces 10",
+        "flow-install-types": "flow-typed install --overwrite",
+        "bump": "gulp bump --part",
+        "ci-test": "jest",
+        "ci-build": "gulp build",
+        "ci-release-notes": "conventional-github-releaser -p eslint"
+    },
+    "jest": {
+        "coverageDirectory": "<rootDir>/.jest-coverage",
+        "testEnvironment": "node",
+        "testMatch": [
+            "**/__tests__/**/*.test.js"
+        ]
+    },
+    "dependencies": {
+        "convict": "4.x"
+    },
+    "peerDependencies": {
+        "@textpress/extendable-error": "*",
+        "aws-sdk": "*",
+        "bluebird": "*",
+        "lodash": "*",
+        "seamless-immutable": "*"
+    },
+    "devDependencies": {
+        "@textpress/babel-preset-textpress": "*",
+        "@textpress/eslint-config-textpress": "*",
+        "@textpress/extendable-error": "*",
+        "@textpress/gulp-bump-version": "*",
+        "aws-sdk": ">=2.114.0",
+        "bluebird": ">=3.5.0",
+        "conventional-github-releaser": "^2.0.0",
+        "eslint": "^4.6.1",
+        "flow-bin": "^0.59.0",
+        "flow-copy-source": "^1.2.1",
+        "flow-typed": "^2.1.5",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^7.0.0",
+        "gulp-clean": "^0.3.2",
+        "gulp-rename": "^1.2.2",
+        "gulp-sourcemaps": "^2.6.1",
+        "jest": "^21.0.2",
+        "lodash": ">=4.17.4",
+        "merge-stream": "^1.0.1",
+        "rimraf": "^2.6.2",
+        "seamless-immutable": ">=7.1.2",
+        "sinon": "^4.1.2"
+    }
 }
