@@ -1,0 +1,1269 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/errors.js",
+    "content": "\"use strict\";\n\nimport ExtendableError from \"@textpress/extendable-error\";\n\nexport class ConfigError extends ExtendableError {\n    constructor( message, extra ) {\n        super( message, extra );\n    }\n}\n\nexport default ConfigError;\n",
+    "static": true,
+    "longname": "/Users/work/projects/config/src/errors.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "ConfigError",
+    "memberof": "src/errors.js",
+    "static": true,
+    "longname": "src/errors.js~ConfigError",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/errors.js",
+    "importStyle": "{ConfigError}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "@textpress/extendable-error~ExtendableError"
+    ]
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/errors.js~ConfigError",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/errors.js~ConfigError#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "\"use strict\";\n\nimport ConfigError from \"./errors\";\nimport minSchema from \"./min-schema.json\";\n\nimport AWS from \"aws-sdk\";\nimport convict from \"convict\";\nimport fs from \"fs\";\nimport _ from \"lodash\";\nimport path from \"path\";\nimport Immutable from \"seamless-immutable\";\n\nfunction configDir() {\n    return process.env.NODE_CONFIG_DIR || path.join( process.cwd(), \"config\" );\n}\n\nfunction configFileNames() {\n    const deployment = process.env.NODE_ENV || \"development\";\n    let result = [ deployment ];\n\n    const fullHostName = process.env.HOST || process.env.HOSTNAME || require( \"os\" ).hostname() || \"\";\n    if ( fullHostName ) {\n        const shortHostName = fullHostName.substr( 0, fullHostName.indexOf( \".\" ) );\n        if ( shortHostName )\n            result = result.concat( [ shortHostName, `${shortHostName}-${deployment}` ] );\n        result = result.concat( [ fullHostName, `${fullHostName}-${deployment}` ] );\n    }\n\n    return result;\n}\n\nfunction fileExist( path ) {\n    try {\n        return fs.statSync( path ).isFile();\n    } catch ( x ) {}\n    return false;\n}\n\nfunction loadConfigFile( root, name, required ) {\n    name = `${name}.json`;\n    const filePath = path.join( root, name );\n    try {\n        if ( fileExist( filePath ) )\n            return JSON.parse( fs.readFileSync( filePath, { encoding: \"utf8\" } ) );\n        if ( !required )\n            return {};\n    } catch ( x ) {\n        throw new ConfigError( `Cannot read config file: ${name}`, x )\n    }\n    throw new ConfigError( `Required config file doesn't exist: ${name}`, filePath );\n}\n\nfunction processParameter( stagePrefix, value, keyPath, result ) {\n    if ( _.isString( value ) && value.startsWith( \"@/\" ) ) {\n        result[ keyPath ] = `${stagePrefix}${value.substr( 1 )}`;\n        return result;\n    }\n    if ( _.isObject( value ) )\n        return extractRemoteParameters( stagePrefix, value, keyPath, result );\n    return result;\n}\n\nexport function extractRemoteParameters( stagePrefix, config, path = \"\", result = {} ) {\n    const keyPath = _.isArray( config )\n        ? ( key ) => `${path}[${key}]`\n        : ( key ) => path ? `${path}.${key}` : `${key}`\n    ;\n    return _.reduce(\n        config,\n        ( result, value, key ) => processParameter( stagePrefix, value, keyPath( key ), result ),\n        result\n    );\n}\n\nexport function findCommonRemoteParametersRoot( remoteParams ) {\n    const rootParts = _.reduce(\n        remoteParams,\n        ( rootParts, value ) => {\n            const valueParts = value.split( \"/\" );\n            if ( !rootParts )\n                return valueParts;\n            const index = _.findIndex( rootParts, ( value, index ) => { return valueParts[ index ] !== value; } );\n            if ( index === -1 )\n                return rootParts;\n            rootParts.splice( index );\n            return rootParts;\n        },\n        null\n    ) || [ \"\" ];\n    const result = rootParts.join( \"/\" );\n    return result || \"/\";\n}\n\nasync function loadRemoteConfig( path, SSMConfig ) {\n    const ssm = new AWS.SSM( SSMConfig );\n    const getParametersByPath = Promise.promisify( ssm.getParametersByPath, { context: ssm } );\n    const { Parameters } = await getParametersByPath( { Path: path, Recursive: true, WithDecryption: true } );\n    return _.reduce(\n        Parameters,\n        ( result, parameter ) => {\n            result[ parameter.Name ] = parameter.Value;\n            return result;\n        },\n        {}\n    );\n}\n\nfunction loadLocalFiles( root ) {\n    const schema = _.defaultsDeep(\n        loadConfigFile( root, \"schema\", true ),\n        minSchema\n    );\n    const configs = configFileNames()\n        .map( ( name, index ) => loadConfigFile( root, name, !index ) )\n        .reverse()\n    ;\n\n    const config = _.defaultsDeep.apply( null, configs );\n\n    return {\n        schema,\n        config\n    }\n}\n\n\nasync function resolveRemoteProperties( config, stage, SSMConfig ) {\n    const remoteParams = extractRemoteParameters( stage ? `/${stage}` : \"\", config );\n    if ( !_.keys( remoteParams ).length )\n        return config;\n    const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), SSMConfig );\n    _.forEach( remoteParams, ( remote, local ) => {\n        const value = remoteConfig[ remote ];\n        if ( value !== undefined )\n            _.set( config, local, remoteConfig[ remote ] );\n        else {\n            const root = remote + \"/\";\n            _.forEach( remoteConfig, ( value, remote ) => {\n                if ( !remote.startsWith( root ) )\n                    return;\n                const localPath = `${local}.${remote.substr( root.length ).replace( \"/\", \".\" ) }`;\n                _.set( config, localPath, remoteConfig[ remote ] )\n            } );\n        }\n    } );\n    return config;\n}\n\nfunction combine( schema, config ) {\n    const combiner = convict( schema );\n    combiner.load( config );\n    combiner.validate();\n    const result = combiner.getProperties();\n    const string = combiner.toString();\n    result.toString = function () { return string; };\n    result.inspect = function () { return string; };\n    return Immutable( result );\n}\n\nfunction loadConfigImpl( postProcessor ) {\n    const root = configDir();\n    try {\n        const { schema, config } = loadLocalFiles( root );\n        return postProcessor( schema, config );\n    } catch ( x ) {\n        if ( x instanceof ConfigError )\n            throw x;\n        throw new ConfigError( `Cannot load config. ${x.message}`, x );\n    }\n\n}\n\nfunction extractDefaults( schema ) {\n    const combiner = convict( schema );\n    combiner.load( {} );\n    return combiner.getProperties();\n}\n\nexport async function loadConfig( stage ) {\n    return await loadConfigImpl( async ( schema, config ) => {\n        const defaults = extractDefaults( schema );\n        const AWSConfig = _.get( config, \"AWS.defaults\", _.get( defaults, \"AWS.defaults\", {} ) );\n        const SSMConfig = _.get( config, \"AWS.SSM\", _.get( defaults, \"AWS.SSM\", {} ) );\n\n        AWS.config.update( AWSConfig );\n        return combine( schema, await resolveRemoteProperties( config, stage, SSMConfig ) );\n    } );\n}\n\nexport function loadLocalConfig() {\n    return loadConfigImpl( combine );\n}\n\nlet localCache = null;\nexport function localConfig( forceReload = false ) {\n    localCache = !forceReload && localCache || loadLocalConfig();\n    return localCache;\n}\n\nconst cache = {};\n\nexport default async function config( stage, forceReload = false ) {\n    const cacheKey = stage || \".empty\";\n    const result = !forceReload && cache[ cacheKey ] || await loadConfig( stage );\n    cache[ cacheKey ] = result;\n    return result;\n}\n\n",
+    "static": true,
+    "longname": "/Users/work/projects/config/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "configDir",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~configDir",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "configFileNames",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~configFileNames",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 17,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "fileExist",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~fileExist",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "loadConfigFile",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~loadConfigFile",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "params": [
+      {
+        "name": "root",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "name",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "required",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "processParameter",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~processParameter",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 53,
+    "undocument": true,
+    "params": [
+      {
+        "name": "stagePrefix",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "keyPath",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "result",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "name": "extractRemoteParameters",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~extractRemoteParameters",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": "{extractRemoteParameters}",
+    "description": null,
+    "lineNumber": 63,
+    "undocument": true,
+    "params": [
+      {
+        "name": "stagePrefix",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "config",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "path",
+        "optional": true,
+        "types": [
+          "string"
+        ],
+        "defaultRaw": "",
+        "defaultValue": ""
+      },
+      {
+        "name": "result",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "name": "findCommonRemoteParametersRoot",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~findCommonRemoteParametersRoot",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": "{findCommonRemoteParametersRoot}",
+    "description": null,
+    "lineNumber": 75,
+    "undocument": true,
+    "params": [
+      {
+        "name": "remoteParams",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "loadRemoteConfig",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/index.js~loadRemoteConfig",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 94,
+    "undocument": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "SSMConfig",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "name": "loadLocalFiles",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~loadLocalFiles",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 108,
+    "undocument": true,
+    "params": [
+      {
+        "name": "root",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"schema\": *, \"config\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "name": "resolveRemoteProperties",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/index.js~resolveRemoteProperties",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 127,
+    "undocument": true,
+    "params": [
+      {
+        "name": "config",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "stage",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "SSMConfig",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "combine",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~combine",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 149,
+    "undocument": true,
+    "params": [
+      {
+        "name": "schema",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "config",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "loadConfigImpl",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~loadConfigImpl",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 160,
+    "undocument": true,
+    "params": [
+      {
+        "name": "postProcessor",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "extractDefaults",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~extractDefaults",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 173,
+    "undocument": true,
+    "params": [
+      {
+        "name": "schema",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "function",
+    "name": "loadConfig",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/index.js~loadConfig",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": "{loadConfig}",
+    "description": null,
+    "lineNumber": 179,
+    "undocument": true,
+    "params": [
+      {
+        "name": "stage",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "function",
+    "name": "loadLocalConfig",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~loadLocalConfig",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": "{loadLocalConfig}",
+    "description": null,
+    "lineNumber": 190,
+    "undocument": true,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "name": "localCache",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~localCache",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 194,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "localConfig",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/index.js~localConfig",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": "{localConfig}",
+    "description": null,
+    "lineNumber": 195,
+    "undocument": true,
+    "params": [
+      {
+        "name": "forceReload",
+        "optional": true,
+        "types": [
+          "boolean"
+        ],
+        "defaultRaw": false,
+        "defaultValue": "false"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "variable",
+    "name": "cache",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~cache",
+    "access": "public",
+    "export": false,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 200,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "config",
+    "memberof": "src/index.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/index.js~config",
+    "access": "public",
+    "export": true,
+    "importPath": "@textpress/config/src/index.js",
+    "importStyle": "config",
+    "description": null,
+    "lineNumber": 202,
+    "undocument": true,
+    "params": [
+      {
+        "name": "stage",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "forceReload",
+        "optional": true,
+        "types": [
+          "boolean"
+        ],
+        "defaultRaw": false,
+        "defaultValue": "false"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "index",
+    "content": "",
+    "longname": "/Users/work/projects/config/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n    \"name\": \"@textpress/config\",\n    \"version\": \"0.4.1\",\n    \"description\": \"Config from local files with ability to pull values from SSM\",\n    \"main\": \"lib/index.js\",\n    \"scripts\": {\n        \"test\": \"jest --coverage --colors\",\n        \"test-update-snapshots\": \"jest -u\",\n        \"bump\": \"gulp bump --part\",\n        \"build\": \"yarn build:clean && yarn build:lib && yarn build:docs\",\n        \"build:clean\": \"rimraf lib\",\n        \"build:lib\": \"babel -d lib src -s --ignore '**/__tests__/**' && cpx 'src/min-schema.json' 'lib/'\",\n        \"build:docs\": \"esdoc\",\n        \"ci-test\": \"jest\",\n        \"ci-build\": \"yarn build\",\n        \"ci-release-notes\": \"conventional-github-releaser -p eslint\"\n    },\n    \"jest\": {\n        \"coverageDirectory\": \"<rootDir>/.jest-coverage\",\n        \"testEnvironment\": \"node\",\n        \"testMatch\": [\n            \"**/__tests__/**/*.test.js\"\n        ],\n        \"testPathIgnorePatterns\": [\n            \"\\\\.[^/]*/\"\n        ]\n    },\n    \"dependencies\": {\n        \"convict\": \"4.x\"\n    },\n    \"peerDependencies\": {\n        \"@textpress/extendable-error\": \"*\",\n        \"aws-sdk\": \"*\",\n        \"bluebird\": \"*\",\n        \"lodash\": \"*\",\n        \"seamless-immutable\": \"*\"\n    },\n    \"devDependencies\": {\n        \"@textpress/babel-preset-textpress\": \"*\",\n        \"@textpress/eslint-config-textpress\": \"*\",\n        \"@textpress/extendable-error\": \"*\",\n        \"@textpress/gulp-bump-version\": \"*\",\n        \"aws-sdk\": \">=2.114.0\",\n        \"bluebird\": \">=3.5.0\",\n        \"conventional-github-releaser\": \"^2.0.0\",\n        \"cpx\": \"^1.5.0\",\n        \"esdoc\": \"^1.0.4\",\n        \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n        \"esdoc-standard-plugin\": \"^1.0.0\",\n        \"eslint\": \"^4.6.1\",\n        \"flow-bin\": \"^0.59.0\",\n        \"gulp\": \"^3.9.1\",\n        \"jest\": \"^21.0.2\",\n        \"lodash\": \">=4.17.4\",\n        \"merge-stream\": \"^1.0.1\",\n        \"rimraf\": \"^2.6.2\",\n        \"seamless-immutable\": \">=7.1.2\",\n        \"sinon\": \"^4.1.2\"\n    }\n}\n",
+    "longname": "/Users/work/projects/config/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

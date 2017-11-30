@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/index.js | @textpress/config</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Config from local files with ability to pull values from SSM"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@textpress/config"><meta property="twitter:description" content="Config from local files with ability to pull values from SSM"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/errors.js~ConfigError.html">ConfigError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-config">config</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-extractRemoteParameters">extractRemoteParameters</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-findCommonRemoteParametersRoot">findCommonRemoteParametersRoot</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadConfig">loadConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadLocalConfig">loadLocalConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-localConfig">localConfig</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&quot;use strict&quot;;
+
+import ConfigError from &quot;./errors&quot;;
+import minSchema from &quot;./min-schema.json&quot;;
+
+import AWS from &quot;aws-sdk&quot;;
+import convict from &quot;convict&quot;;
+import fs from &quot;fs&quot;;
+import _ from &quot;lodash&quot;;
+import path from &quot;path&quot;;
+import Immutable from &quot;seamless-immutable&quot;;
+
+function configDir() {
+    return process.env.NODE_CONFIG_DIR || path.join( process.cwd(), &quot;config&quot; );
+}
+
+function configFileNames() {
+    const deployment = process.env.NODE_ENV || &quot;development&quot;;
+    let result = [ deployment ];
+
+    const fullHostName = process.env.HOST || process.env.HOSTNAME || require( &quot;os&quot; ).hostname() || &quot;&quot;;
+    if ( fullHostName ) {
+        const shortHostName = fullHostName.substr( 0, fullHostName.indexOf( &quot;.&quot; ) );
+        if ( shortHostName )
+            result = result.concat( [ shortHostName, `${shortHostName}-${deployment}` ] );
+        result = result.concat( [ fullHostName, `${fullHostName}-${deployment}` ] );
+    }
+
+    return result;
+}
+
+function fileExist( path ) {
+    try {
+        return fs.statSync( path ).isFile();
+    } catch ( x ) {}
+    return false;
+}
+
+function loadConfigFile( root, name, required ) {
+    name = `${name}.json`;
+    const filePath = path.join( root, name );
+    try {
+        if ( fileExist( filePath ) )
+            return JSON.parse( fs.readFileSync( filePath, { encoding: &quot;utf8&quot; } ) );
+        if ( !required )
+            return {};
+    } catch ( x ) {
+        throw new ConfigError( `Cannot read config file: ${name}`, x )
+    }
+    throw new ConfigError( `Required config file doesn&apos;t exist: ${name}`, filePath );
+}
+
+function processParameter( stagePrefix, value, keyPath, result ) {
+    if ( _.isString( value ) &amp;&amp; value.startsWith( &quot;@/&quot; ) ) {
+        result[ keyPath ] = `${stagePrefix}${value.substr( 1 )}`;
+        return result;
+    }
+    if ( _.isObject( value ) )
+        return extractRemoteParameters( stagePrefix, value, keyPath, result );
+    return result;
+}
+
+export function extractRemoteParameters( stagePrefix, config, path = &quot;&quot;, result = {} ) {
+    const keyPath = _.isArray( config )
+        ? ( key ) =&gt; `${path}[${key}]`
+        : ( key ) =&gt; path ? `${path}.${key}` : `${key}`
+    ;
+    return _.reduce(
+        config,
+        ( result, value, key ) =&gt; processParameter( stagePrefix, value, keyPath( key ), result ),
+        result
+    );
+}
+
+export function findCommonRemoteParametersRoot( remoteParams ) {
+    const rootParts = _.reduce(
+        remoteParams,
+        ( rootParts, value ) =&gt; {
+            const valueParts = value.split( &quot;/&quot; );
+            if ( !rootParts )
+                return valueParts;
+            const index = _.findIndex( rootParts, ( value, index ) =&gt; { return valueParts[ index ] !== value; } );
+            if ( index === -1 )
+                return rootParts;
+            rootParts.splice( index );
+            return rootParts;
+        },
+        null
+    ) || [ &quot;&quot; ];
+    const result = rootParts.join( &quot;/&quot; );
+    return result || &quot;/&quot;;
+}
+
+async function loadRemoteConfig( path, SSMConfig ) {
+    const ssm = new AWS.SSM( SSMConfig );
+    const getParametersByPath = Promise.promisify( ssm.getParametersByPath, { context: ssm } );
+    const { Parameters } = await getParametersByPath( { Path: path, Recursive: true, WithDecryption: true } );
+    return _.reduce(
+        Parameters,
+        ( result, parameter ) =&gt; {
+            result[ parameter.Name ] = parameter.Value;
+            return result;
+        },
+        {}
+    );
+}
+
+function loadLocalFiles( root ) {
+    const schema = _.defaultsDeep(
+        loadConfigFile( root, &quot;schema&quot;, true ),
+        minSchema
+    );
+    const configs = configFileNames()
+        .map( ( name, index ) =&gt; loadConfigFile( root, name, !index ) )
+        .reverse()
+    ;
+
+    const config = _.defaultsDeep.apply( null, configs );
+
+    return {
+        schema,
+        config
+    }
+}
+
+
+async function resolveRemoteProperties( config, stage, SSMConfig ) {
+    const remoteParams = extractRemoteParameters( stage ? `/${stage}` : &quot;&quot;, config );
+    if ( !_.keys( remoteParams ).length )
+        return config;
+    const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), SSMConfig );
+    _.forEach( remoteParams, ( remote, local ) =&gt; {
+        const value = remoteConfig[ remote ];
+        if ( value !== undefined )
+            _.set( config, local, remoteConfig[ remote ] );
+        else {
+            const root = remote + &quot;/&quot;;
+            _.forEach( remoteConfig, ( value, remote ) =&gt; {
+                if ( !remote.startsWith( root ) )
+                    return;
+                const localPath = `${local}.${remote.substr( root.length ).replace( &quot;/&quot;, &quot;.&quot; ) }`;
+                _.set( config, localPath, remoteConfig[ remote ] )
+            } );
+        }
+    } );
+    return config;
+}
+
+function combine( schema, config ) {
+    const combiner = convict( schema );
+    combiner.load( config );
+    combiner.validate();
+    const result = combiner.getProperties();
+    const string = combiner.toString();
+    result.toString = function () { return string; };
+    result.inspect = function () { return string; };
+    return Immutable( result );
+}
+
+function loadConfigImpl( postProcessor ) {
+    const root = configDir();
+    try {
+        const { schema, config } = loadLocalFiles( root );
+        return postProcessor( schema, config );
+    } catch ( x ) {
+        if ( x instanceof ConfigError )
+            throw x;
+        throw new ConfigError( `Cannot load config. ${x.message}`, x );
+    }
+
+}
+
+function extractDefaults( schema ) {
+    const combiner = convict( schema );
+    combiner.load( {} );
+    return combiner.getProperties();
+}
+
+export async function loadConfig( stage ) {
+    return await loadConfigImpl( async ( schema, config ) =&gt; {
+        const defaults = extractDefaults( schema );
+        const AWSConfig = _.get( config, &quot;AWS.defaults&quot;, _.get( defaults, &quot;AWS.defaults&quot;, {} ) );
+        const SSMConfig = _.get( config, &quot;AWS.SSM&quot;, _.get( defaults, &quot;AWS.SSM&quot;, {} ) );
+
+        AWS.config.update( AWSConfig );
+        return combine( schema, await resolveRemoteProperties( config, stage, SSMConfig ) );
+    } );
+}
+
+export function loadLocalConfig() {
+    return loadConfigImpl( combine );
+}
+
+let localCache = null;
+export function localConfig( forceReload = false ) {
+    localCache = !forceReload &amp;&amp; localCache || loadLocalConfig();
+    return localCache;
+}
+
+const cache = {};
+
+export default async function config( stage, forceReload = false ) {
+    const cacheKey = stage || &quot;.empty&quot;;
+    const result = !forceReload &amp;&amp; cache[ cacheKey ] || await loadConfig( stage );
+    cache[ cacheKey ] = result;
+    return result;
+}
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
