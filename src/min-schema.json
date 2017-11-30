@@ -16,6 +16,11 @@
                 "format": "String",
                 "default": "us-east-1"
             }
+        },
+        "SSM": {
+            "doc": "SSM config",
+            "format": "Object",
+            "default": {}
         }
     }
 }

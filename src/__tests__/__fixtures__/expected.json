@@ -3,7 +3,8 @@
     "AWS": {
         "defaults": {
             "region": "us-east-1"
-        }
+        },
+        "SSM": {}
     },
     "defaultValue": "THIS IS DEFAULT VALUE",
     "port": 4000,
