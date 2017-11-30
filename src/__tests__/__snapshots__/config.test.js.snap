@@ -16,7 +16,8 @@ exports[`config config doesn't print sensitive data with inspect() 1`] = `
   \\"env\\": \\"test\\",
   \\"AWS\\": {
     \\"defaults\\": {
-      \\"region\\": \\"us-east-1\\"
+      \\"region\\": \\"us-east-1\\",
+      \\"sslEnabled\\": true
     },
     \\"SSM\\": {}
   }
@@ -39,7 +40,8 @@ exports[`config config doesn't print sensitive data with toString() 1`] = `
   \\"env\\": \\"test\\",
   \\"AWS\\": {
     \\"defaults\\": {
-      \\"region\\": \\"us-east-1\\"
+      \\"region\\": \\"us-east-1\\",
+      \\"sslEnabled\\": true
     },
     \\"SSM\\": {}
   }
@@ -108,7 +110,8 @@ exports[`config localConfig doesn't print sensitive data with inspect() 1`] = `
   \\"env\\": \\"test\\",
   \\"AWS\\": {
     \\"defaults\\": {
-      \\"region\\": \\"us-east-1\\"
+      \\"region\\": \\"us-east-1\\",
+      \\"sslEnabled\\": true
     },
     \\"SSM\\": {}
   }
@@ -131,7 +134,8 @@ exports[`config localConfig doesn't print sensitive data with toString() 1`] = `
   \\"env\\": \\"test\\",
   \\"AWS\\": {
     \\"defaults\\": {
-      \\"region\\": \\"us-east-1\\"
+      \\"region\\": \\"us-east-1\\",
+      \\"sslEnabled\\": true
     },
     \\"SSM\\": {}
   }

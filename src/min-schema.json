@@ -15,6 +15,11 @@
                 "doc": "AWS region",
                 "format": "String",
                 "default": "us-east-1"
+            },
+            "sslEnabled": {
+                "doc": "Enable SSL for AWS requests",
+                "format": "Boolean",
+                "default": true
             }
         },
         "SSM": {
