@@ -82,6 +82,19 @@ Object {
 }
 `;
 
+exports[`config loadConfig extends AWS configuration 1`] = `
+Object {
+  "region": "us-east-1",
+  "sslEnabled": false,
+}
+`;
+
+exports[`config loadConfig replaces AWS configuration 1`] = `
+Object {
+  "region": "asia",
+}
+`;
+
 exports[`config loadConfig works 1`] = `
 Array [
   "getParametersByPath",

@@ -179,8 +179,8 @@ function extractDefaults( schema ) {
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
         const defaults = extractDefaults( schema );
-        const AWSConfig = _.get( config, "AWS.defaults", _.get( defaults, "AWS.defaults", {} ) );
-        const SSMConfig = _.get( config, "AWS.SSM", _.get( defaults, "AWS.SSM", {} ) );
+        const AWSConfig = { ..._.get( defaults, "AWS.defaults", {} ), ..._.get( config, "AWS.defaults", {} ) };
+        const SSMConfig = { ..._.get( defaults, "AWS.SSM", {} ), ..._.get( config, "AWS.SSM", {} ) };
 
         AWS.config.update( AWSConfig );
         return combine( schema, await resolveRemoteProperties( config, stage, SSMConfig ) );

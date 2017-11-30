@@ -7,6 +7,7 @@ import AWS from "aws-sdk";
 import path from "path";
 import Immutable from "seamless-immutable";
 import sinon from "sinon";
+import _ from "lodash";
 
 import expectedConfig from "./__fixtures__/expected.json";
 import remoteTestConfig from "./__fixtures__/remoteConfig/test.json";
@@ -82,6 +83,21 @@ describe( "config", () => {
             expect( Immutable.isImmutable( cfg ) ).toBe( true );
             expect( cfg ).toMatchObject( expectedConfig );
         } );
+
+        it( "extends AWS configuration", async () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "extendedAWSRemoteConfig" );
+
+            await config.loadConfig( "test" );
+            expect( _.pick( AWS.config, [ "region", "sslEnabled" ] ) ).toMatchSnapshot();
+        } );
+
+        it( "replaces AWS configuration", async () => {
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "replacedAWSRemoteConfig" );
+
+            await config.loadConfig( "test" );
+            expect( _.pick( AWS.config, [ "region" ] ) ).toMatchSnapshot();
+        } );
+
 
         it( "fails if cannot find file for current node environment", async () => {
             process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "brokenConfig" );
