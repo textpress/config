@@ -6,7 +6,7 @@ import minSchema from "./min-schema.json";
 import AWS from "aws-sdk";
 import convict from "convict";
 import fs from "fs";
-import { defaultsDeep, findIndex, forEach, get, isArray, isObject, isString, keys, reduce, set } from "lodash";
+import _ from "lodash";
 import path from "path";
 import Immutable from "seamless-immutable";
 
@@ -51,21 +51,21 @@ function loadConfigFile( root, name, required ) {
 }
 
 function processParameter( stagePrefix, value, keyPath, result ) {
-    if ( isString( value ) && value.startsWith( "@/" ) ) {
+    if ( _.isString( value ) && value.startsWith( "@/" ) ) {
         result[ keyPath ] = `${stagePrefix}${value.substr( 1 )}`;
         return result;
     }
-    if ( isObject( value ) )
+    if ( _.isObject( value ) )
         return extractRemoteParameters( stagePrefix, value, keyPath, result );
     return result;
 }
 
 export function extractRemoteParameters( stagePrefix, config, path = "", result = {} ) {
-    const keyPath = isArray( config )
+    const keyPath = _.isArray( config )
         ? ( key ) => `${path}[${key}]`
         : ( key ) => path ? `${path}.${key}` : `${key}`
     ;
-    return reduce(
+    return _.reduce(
         config,
         ( result, value, key ) => processParameter( stagePrefix, value, keyPath( key ), result ),
         result
@@ -73,13 +73,13 @@ export function extractRemoteParameters( stagePrefix, config, path = "", result 
 }
 
 export function findCommonRemoteParametersRoot( remoteParams ) {
-    const rootParts = reduce(
+    const rootParts = _.reduce(
         remoteParams,
         ( rootParts, value ) => {
             const valueParts = value.split( "/" );
             if ( !rootParts )
                 return valueParts;
-            const index = findIndex( rootParts, ( value, index ) => { return valueParts[ index ] !== value; } );
+            const index = _.findIndex( rootParts, ( value, index ) => { return valueParts[ index ] !== value; } );
             if ( index === -1 )
                 return rootParts;
             rootParts.splice( index );
@@ -91,11 +91,11 @@ export function findCommonRemoteParametersRoot( remoteParams ) {
     return result || "/";
 }
 
-async function loadRemoteConfig( path, region ) {
-    const ssm = new AWS.SSM( { region } );
+async function loadRemoteConfig( path, SSMConfig ) {
+    const ssm = new AWS.SSM( SSMConfig );
     const getParametersByPath = Promise.promisify( ssm.getParametersByPath, { context: ssm } );
     const { Parameters } = await getParametersByPath( { Path: path, Recursive: true, WithDecryption: true } );
-    return reduce(
+    return _.reduce(
         Parameters,
         ( result, parameter ) => {
             result[ parameter.Name ] = parameter.Value;
@@ -106,7 +106,7 @@ async function loadRemoteConfig( path, region ) {
 }
 
 function loadLocalFiles( root ) {
-    const schema = defaultsDeep(
+    const schema = _.defaultsDeep(
         loadConfigFile( root, "schema", true ),
         minSchema
     );
@@ -115,7 +115,7 @@ function loadLocalFiles( root ) {
         .reverse()
     ;
 
-    const config = defaultsDeep.apply( null, configs );
+    const config = _.defaultsDeep.apply( null, configs );
 
     return {
         schema,
@@ -124,22 +124,22 @@ function loadLocalFiles( root ) {
 }
 
 
-async function resolveRemoteProperties( config, stage, region ) {
+async function resolveRemoteProperties( config, stage, SSMConfig ) {
     const remoteParams = extractRemoteParameters( stage ? `/${stage}` : "", config );
-    if ( !keys( remoteParams ).length )
+    if ( !_.keys( remoteParams ).length )
         return config;
-    const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), region );
-    forEach( remoteParams, ( remote, local ) => {
+    const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), SSMConfig );
+    _.forEach( remoteParams, ( remote, local ) => {
         const value = remoteConfig[ remote ];
         if ( value !== undefined )
-            set( config, local, remoteConfig[ remote ] );
+            _.set( config, local, remoteConfig[ remote ] );
         else {
             const root = remote + "/";
-            forEach( remoteConfig, ( value, remote ) => {
+            _.forEach( remoteConfig, ( value, remote ) => {
                 if ( !remote.startsWith( root ) )
                     return;
                 const localPath = `${local}.${remote.substr( root.length ).replace( "/", "." ) }`;
-                set( config, localPath, remoteConfig[ remote ] )
+                _.set( config, localPath, remoteConfig[ remote ] )
             } );
         }
     } );
@@ -170,13 +170,20 @@ function loadConfigImpl( postProcessor ) {
 
 }
 
+function extractDefaults( schema ) {
+    const combiner = convict( schema );
+    combiner.load( {} );
+    return combiner.getProperties();
+}
+
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
-        const region = config.SSMRegion || get( schema, "SSMRegion.default", null );
-        if ( !region )
-            throw new ConfigError( "Cannot load config, SSM region is undefined." );
+        const defaults = extractDefaults( schema );
+        const AWSConfig = _.get( config, "AWS.defaults", _.get( defaults, "AWS.defaults", {} ) );
+        const SSMConfig = _.get( config, "AWS.SSM", _.get( defaults, "AWS.SSM", {} ) );
 
-        return combine( schema, await resolveRemoteProperties( config, stage, region ) );
+        AWS.config.update( AWSConfig );
+        return combine( schema, await resolveRemoteProperties( config, stage, SSMConfig ) );
     } );
 }
 
@@ -198,3 +205,4 @@ export default async function config( stage, forceReload = false ) {
     cache[ cacheKey ] = result;
     return result;
 }
+

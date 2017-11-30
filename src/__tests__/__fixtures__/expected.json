@@ -1,15 +1,19 @@
 {
-  "env": "test",
-  "SSMRegion": "us-east-1",
-  "defaultValue": "THIS IS DEFAULT VALUE",
-  "port": 4000,
-  "signatureSecret": "signatureSecret value",
-  "jenkins": {
-    "baseUrl": "http://localhost",
-    "auth": {
-      "user": "jenkins/auth/user value",
-      "password": "jenkins/auth/password value"
+    "env": "test",
+    "AWS": {
+        "defaults": {
+            "region": "us-east-1"
+        }
     },
-    "token": "jenkins/token value"
-  }
+    "defaultValue": "THIS IS DEFAULT VALUE",
+    "port": 4000,
+    "signatureSecret": "signatureSecret value",
+    "jenkins": {
+        "baseUrl": "http://localhost",
+        "auth": {
+            "user": "jenkins/auth/user value",
+            "password": "jenkins/auth/password value"
+        },
+        "token": "jenkins/token value"
+    }
 }
