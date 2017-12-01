@@ -1,10 +1,11 @@
 {
-  "signatureSecret": "@/textpress-ci/signatureSecret",
-  "jenkins": {
-    "baseUrl": "@/textpress-ci/jenkins/baseUrl",
-    "auth": "@/textpress-ci/jenkins/auth",
-    "token": "@/textpress-ci/jenkins/token"
-  },
-  "github": "@/textpress-ci/github",
-  "port": 4000
+    "signatureSecret": "@/textpress-ci/signatureSecret",
+    "jenkins": {
+        "baseUrl": "@/textpress-ci/jenkins/baseUrl",
+        "auth": "@/textpress-ci/jenkins/auth",
+        "token": "@/textpress-ci/jenkins/token"
+    },
+    "github": "@/textpress-ci/github",
+    "port": 4000,
+    "aws": "@/textpress-ci/aws"
 }

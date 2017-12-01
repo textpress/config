@@ -60,10 +60,48 @@ Array [
 ]
 `;
 
+exports[`config config works 2`] = `
+Object {
+  "aws": Object {
+    "defaults": Object {
+      "region": "us-east-1",
+      "sslEnabled": true,
+    },
+    "sqs": Object {
+      "defaults": Object {},
+      "rendering": Object {
+        "DelaySeconds": 0,
+        "QueueUrl": "https://sqs.region.amazonaws.com/accountId/queue-name",
+      },
+    },
+    "ssm": Object {},
+  },
+  "defaultValue": "THIS IS DEFAULT VALUE",
+  "env": "test",
+  "github": Object {
+    "baseUrl": "https://api.github.com",
+    "token": "github/token value",
+  },
+  "inspect": [Function],
+  "jenkins": Object {
+    "auth": Object {
+      "password": "jenkins/auth/password value",
+      "user": "jenkins/auth/user value",
+    },
+    "baseUrl": "http://localhost",
+    "token": "jenkins/token value",
+  },
+  "port": 4000,
+  "signatureSecret": "signatureSecret value",
+  "toString": [Function],
+}
+`;
+
 exports[`config extractRemoteParameters works with empty config 1`] = `Object {}`;
 
 exports[`config extractRemoteParameters works with stage prefix 1`] = `
 Object {
+  "aws": "/production/textpress-ci/aws",
   "github": "/production/textpress-ci/github",
   "jenkins.auth": "/production/textpress-ci/jenkins/auth",
   "jenkins.baseUrl": "/production/textpress-ci/jenkins/baseUrl",
@@ -74,6 +112,7 @@ Object {
 
 exports[`config extractRemoteParameters works without stage prefix 1`] = `
 Object {
+  "aws": "/textpress-ci/aws",
   "github": "/textpress-ci/github",
   "jenkins.auth": "/textpress-ci/jenkins/auth",
   "jenkins.baseUrl": "/textpress-ci/jenkins/baseUrl",
@@ -105,6 +144,69 @@ Array [
   },
   [Function],
 ]
+`;
+
+exports[`config loadConfig works 2`] = `
+Object {
+  "aws": Object {
+    "defaults": Object {
+      "region": "us-east-1",
+      "sslEnabled": true,
+    },
+    "sqs": Object {
+      "defaults": Object {},
+      "rendering": Object {
+        "DelaySeconds": 0,
+        "QueueUrl": "https://sqs.region.amazonaws.com/accountId/queue-name",
+      },
+    },
+    "ssm": Object {},
+  },
+  "defaultValue": "THIS IS DEFAULT VALUE",
+  "env": "test",
+  "github": Object {
+    "baseUrl": "https://api.github.com",
+    "token": "github/token value",
+  },
+  "inspect": [Function],
+  "jenkins": Object {
+    "auth": Object {
+      "password": "jenkins/auth/password value",
+      "user": "jenkins/auth/user value",
+    },
+    "baseUrl": "http://localhost",
+    "token": "jenkins/token value",
+  },
+  "port": 4000,
+  "signatureSecret": "signatureSecret value",
+  "toString": [Function],
+}
+`;
+
+exports[`config loadLocalConfig works 1`] = `
+Object {
+  "aws": Object {
+    "defaults": Object {
+      "region": "us-east-1",
+      "sslEnabled": true,
+    },
+    "ssm": Object {},
+  },
+  "defaultValue": "THIS IS DEFAULT VALUE",
+  "env": "test",
+  "inspect": [Function],
+  "jenkins": Object {
+    "auth": Object {
+      "password": "jenkins/auth/password value",
+      "user": "jenkins/auth/user value",
+    },
+    "baseUrl": "http://localhost",
+    "token": "jenkins/token value",
+  },
+  "port": 4000,
+  "signatureSecret": "signatureSecret value",
+  "toString": [Function],
+}
 `;
 
 exports[`config localConfig doesn't print sensitive data with inspect() 1`] = `
@@ -153,4 +255,30 @@ exports[`config localConfig doesn't print sensitive data with toString() 1`] = `
     \\"ssm\\": {}
   }
 }"
+`;
+
+exports[`config localConfig works 1`] = `
+Object {
+  "aws": Object {
+    "defaults": Object {
+      "region": "us-east-1",
+      "sslEnabled": true,
+    },
+    "ssm": Object {},
+  },
+  "defaultValue": "THIS IS DEFAULT VALUE",
+  "env": "test",
+  "inspect": [Function],
+  "jenkins": Object {
+    "auth": Object {
+      "password": "jenkins/auth/password value",
+      "user": "jenkins/auth/user value",
+    },
+    "baseUrl": "http://localhost",
+    "token": "jenkins/token value",
+  },
+  "port": 4000,
+  "signatureSecret": "signatureSecret value",
+  "toString": [Function],
+}
 `;

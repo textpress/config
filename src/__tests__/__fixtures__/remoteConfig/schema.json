@@ -50,5 +50,28 @@
             "default": null,
             "sensitive": true
         }
+    },
+    "aws": {
+        "sqs": {
+            "defaults": {
+                "doc": "SQS default config",
+                "format": "Object",
+                "default": {}
+            },
+            "rendering": {
+                "QueueUrl": {
+                    "doc": "Rendering SQS queue url",
+                    "format": "String",
+                    "default": null
+                },
+                "DelaySeconds": {
+                    "doc": "Rendering SQS queue message delay",
+                    "format": "Number",
+                    "default": 0
+
+                }
+            }
+        }
     }
+
 }

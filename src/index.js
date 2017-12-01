@@ -138,7 +138,7 @@ async function resolveRemoteProperties( config, stage, ssmConfig ) {
             _.forEach( remoteConfig, ( value, remote ) => {
                 if ( !remote.startsWith( root ) )
                     return;
-                const localPath = `${local}.${remote.substr( root.length ).replace( "/", "." ) }`;
+                const localPath = `${local}.${remote.substr( root.length ).replace( /\//g, "." ) }`;
                 _.set( config, localPath, remoteConfig[ remote ] )
             } );
         }

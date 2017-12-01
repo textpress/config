@@ -9,7 +9,6 @@ import Immutable from "seamless-immutable";
 import sinon from "sinon";
 import _ from "lodash";
 
-import expectedConfig from "./__fixtures__/expected.json";
 import remoteTestConfig from "./__fixtures__/remoteConfig/test.json";
 import ssmTestsResponse from "./__fixtures__/ssm-response.json";
 
@@ -81,7 +80,7 @@ describe( "config", () => {
             expect( ssmStub.calledOnce ).toBe( true );
             expect( ssmStub.args[0] ).toMatchSnapshot();
             expect( Immutable.isImmutable( cfg ) ).toBe( true );
-            expect( cfg ).toMatchObject( expectedConfig );
+            expect( cfg ).toMatchSnapshot();
         } );
 
         it( "extends AWS configuration", async () => {
@@ -123,7 +122,7 @@ describe( "config", () => {
             const cfg = config.loadLocalConfig();
             expect( ssmStub.called ).toBe( false );
             expect( Immutable.isImmutable( cfg ) ).toBe( true );
-            expect( cfg ).toMatchObject( expectedConfig );
+            expect( cfg ).toMatchSnapshot();
         } );
 
         it( "fails if cannot find file for current node environment", async () => {
@@ -148,7 +147,7 @@ describe( "config", () => {
             expect( cfg1 ).toBe( cfg2 );
             expect( ssmStub.called ).toBe( false );
             expect( Immutable.isImmutable( cfg1 ) ).toBe( true );
-            expect( cfg1 ).toMatchObject( expectedConfig );
+            expect( cfg1 ).toMatchSnapshot();
         } );
 
         it( "doesn't print sensitive data with toString()", () => {
@@ -176,7 +175,7 @@ describe( "config", () => {
             expect( ssmStub.args[0] ).toMatchSnapshot();
             expect( Immutable.isImmutable( cfg1 ) ).toBe( true );
             expect( Immutable.isImmutable( cfg2 ) ).toBe( true );
-            expect( cfg1 ).toMatchObject( expectedConfig );
+            expect( cfg1 ).toMatchSnapshot();
         } );
 
         it( "doesn't print sensitive data with toString()", async () => {

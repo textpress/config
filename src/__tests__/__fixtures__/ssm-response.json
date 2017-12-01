@@ -29,6 +29,12 @@
       "Type": "String",
       "Name": "/test/textpress-ci/github/token",
       "Value": "github/token value"
+    },
+    {
+      "Type": "String",
+      "Name": "/test/textpress-ci/aws/sqs/rendering/QueueUrl",
+      "Value": "https://sqs.region.amazonaws.com/accountId/queue-name"
     }
+
   ]
 }
