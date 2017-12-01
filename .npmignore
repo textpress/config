@@ -4,5 +4,6 @@ config/
 flow-typed/
 src/
 gulpfile.js
+README.md
 yalc.lock
 yarn.lock
