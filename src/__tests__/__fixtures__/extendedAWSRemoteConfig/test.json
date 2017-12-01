@@ -1,5 +1,5 @@
 {
-    "AWS": {
+    "aws": {
         "defaults": {
             "sslEnabled": false
         }

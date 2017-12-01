@@ -14,12 +14,12 @@ exports[`config config doesn't print sensitive data with inspect() 1`] = `
     \\"token\\": \\"[Sensitive]\\"
   },
   \\"env\\": \\"test\\",
-  \\"AWS\\": {
+  \\"aws\\": {
     \\"defaults\\": {
       \\"region\\": \\"us-east-1\\",
       \\"sslEnabled\\": true
     },
-    \\"SSM\\": {}
+    \\"ssm\\": {}
   }
 }"
 `;
@@ -38,12 +38,12 @@ exports[`config config doesn't print sensitive data with toString() 1`] = `
     \\"token\\": \\"[Sensitive]\\"
   },
   \\"env\\": \\"test\\",
-  \\"AWS\\": {
+  \\"aws\\": {
     \\"defaults\\": {
       \\"region\\": \\"us-east-1\\",
       \\"sslEnabled\\": true
     },
-    \\"SSM\\": {}
+    \\"ssm\\": {}
   }
 }"
 `;
@@ -121,12 +121,12 @@ exports[`config localConfig doesn't print sensitive data with inspect() 1`] = `
     \\"token\\": \\"[Sensitive]\\"
   },
   \\"env\\": \\"test\\",
-  \\"AWS\\": {
+  \\"aws\\": {
     \\"defaults\\": {
       \\"region\\": \\"us-east-1\\",
       \\"sslEnabled\\": true
     },
-    \\"SSM\\": {}
+    \\"ssm\\": {}
   }
 }"
 `;
@@ -145,12 +145,12 @@ exports[`config localConfig doesn't print sensitive data with toString() 1`] = `
     \\"token\\": \\"[Sensitive]\\"
   },
   \\"env\\": \\"test\\",
-  \\"AWS\\": {
+  \\"aws\\": {
     \\"defaults\\": {
       \\"region\\": \\"us-east-1\\",
       \\"sslEnabled\\": true
     },
-    \\"SSM\\": {}
+    \\"ssm\\": {}
   }
 }"
 `;

@@ -91,8 +91,8 @@ export function findCommonRemoteParametersRoot( remoteParams ) {
     return result || "/";
 }
 
-async function loadRemoteConfig( path, SSMConfig ) {
-    const ssm = new AWS.SSM( SSMConfig );
+async function loadRemoteConfig( path, ssmConfig ) {
+    const ssm = new AWS.SSM( ssmConfig );
     const getParametersByPath = Promise.promisify( ssm.getParametersByPath, { context: ssm } );
     const { Parameters } = await getParametersByPath( { Path: path, Recursive: true, WithDecryption: true } );
     return _.reduce(
@@ -124,11 +124,11 @@ function loadLocalFiles( root ) {
 }
 
 
-async function resolveRemoteProperties( config, stage, SSMConfig ) {
+async function resolveRemoteProperties( config, stage, ssmConfig ) {
     const remoteParams = extractRemoteParameters( stage ? `/${stage}` : "", config );
     if ( !_.keys( remoteParams ).length )
         return config;
-    const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), SSMConfig );
+    const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), ssmConfig );
     _.forEach( remoteParams, ( remote, local ) => {
         const value = remoteConfig[ remote ];
         if ( value !== undefined )
@@ -179,11 +179,11 @@ function extractDefaults( schema ) {
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
         const defaults = extractDefaults( schema );
-        const AWSConfig = { ..._.get( defaults, "AWS.defaults", {} ), ..._.get( config, "AWS.defaults", {} ) };
-        const SSMConfig = { ..._.get( defaults, "AWS.SSM", {} ), ..._.get( config, "AWS.SSM", {} ) };
+        const awsConfig = { ..._.get( defaults, "aws.defaults", {} ), ..._.get( config, "aws.defaults", {} ) };
+        const ssmConfig = { ..._.get( defaults, "aws.ssm", {} ), ..._.get( config, "aws.ssm", {} ) };
 
-        AWS.config.update( AWSConfig );
-        return combine( schema, await resolveRemoteProperties( config, stage, SSMConfig ) );
+        AWS.config.update( awsConfig );
+        return combine( schema, await resolveRemoteProperties( config, stage, ssmConfig ) );
     } );
 }
 

@@ -1,10 +1,10 @@
 {
     "env": "test",
-    "AWS": {
+    "aws": {
         "defaults": {
             "region": "us-east-1"
         },
-        "SSM": {}
+        "ssm": {}
     },
     "defaultValue": "THIS IS DEFAULT VALUE",
     "port": 4000,

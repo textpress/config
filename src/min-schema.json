@@ -9,7 +9,7 @@
         "default": "development",
         "env": "NODE_ENV"
     },
-    "AWS": {
+    "aws": {
         "defaults": {
             "region": {
                 "doc": "AWS region",
@@ -22,7 +22,7 @@
                 "default": true
             }
         },
-        "SSM": {
+        "ssm": {
             "doc": "SSM config",
             "format": "Object",
             "default": {}
