@@ -137,6 +137,7 @@ async function resolveRemoteProperties( config, stage, ssmConfig ) {
         if ( value !== undefined )
             _.set( config, local, remoteConfig[ remote ] );
         else {
+            _.unset( config, local );
             const root = remote + "/";
             _.forEach( remoteConfig, ( value, remote ) => {
                 if ( !remote.startsWith( root ) )
