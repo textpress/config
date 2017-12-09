@@ -15,6 +15,7 @@ import ssmTestsResponse from "./__fixtures__/ssm-response.json";
 
 describe( "config", () => {
 
+    const originalEnv = process.env.NODE_ENV;
     const originalConfigDir = process.env.NODE_CONFIG_DIR;
 
     const sandbox = sinon.createSandbox();
@@ -27,10 +28,16 @@ describe( "config", () => {
     afterEach( function () {
         sandbox.restore();
 
+        if ( originalEnv )
+            process.env.NODE_ENV = originalEnv;
+        else
+            delete process.env.NODE_ENV;
+
         if ( originalConfigDir )
             process.env.NODE_CONFIG_DIR = originalConfigDir;
         else
             delete process.env.NODE_CONFIG_DIR;
+
     } );
 
     describe( "extractRemoteParameters", () => {
@@ -109,6 +116,20 @@ describe( "config", () => {
                 expect( x.message ).toBe( "Required config file doesn't exist: test.json" );
             }
         } );
+
+
+        it( "fails if node environment is production and stage is not provided", async () => {
+            process.env.NODE_ENV = "production";
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "remoteConfig" );
+
+            expect.assertions( 1 );
+            try {
+                await config.loadConfig();
+            } catch ( x ) {
+                expect( x ).toBeInstanceOf( ConfigError );
+            }
+        } );
+
 
     } );
 

@@ -17,8 +17,12 @@ function configDir() {
     return process.env.NODE_CONFIG_DIR || path.join( process.cwd(), "config" );
 }
 
+function deploymentType() {
+    return process.env.NODE_ENV || "development";
+}
+
 function configFileNames() {
-    const deployment = process.env.NODE_ENV || "development";
+    const deployment = deploymentType();
     let result = [ deployment ];
 
     const fullHostName = process.env.HOST || process.env.HOSTNAME || require( "os" ).hostname() || "";
@@ -202,6 +206,9 @@ function extractDefaults( schema ) {
 
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
+        if ( deploymentType() === "production" && "stage" )
+            throw new ConfigError( "Production deployment remote config requires non empty stage" );
+
         const defaults = extractDefaults( schema );
         const awsConfig = { ..._.get( defaults, "aws.defaults", {} ), ..._.get( config, "aws.defaults", {} ) };
         const ssmConfig = { ..._.get( defaults, "aws.ssm", {} ), ..._.get( config, "aws.ssm", {} ) };
