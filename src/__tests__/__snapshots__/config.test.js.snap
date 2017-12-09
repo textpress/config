@@ -52,6 +52,8 @@ exports[`config config works 1`] = `
 Array [
   "getParametersByPath",
   Object {
+    "MaxResults": 10,
+    "NextToken": undefined,
     "Path": "/test/textpress-ci",
     "Recursive": true,
     "WithDecryption": true,
@@ -138,6 +140,8 @@ exports[`config loadConfig works 1`] = `
 Array [
   "getParametersByPath",
   Object {
+    "MaxResults": 10,
+    "NextToken": undefined,
     "Path": "/test/textpress-ci",
     "Recursive": true,
     "WithDecryption": true,
