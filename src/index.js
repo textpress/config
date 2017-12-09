@@ -146,7 +146,7 @@ function loadLocalFiles( root ) {
 }
 
 
-async function resolveRemoteProperties( config, stage, ssmConfig ) {
+async function resolveRemoteParameters( config, stage, ssmConfig ) {
     const remoteParams = extractRemoteParameters( stage ? `/${stage}` : "", config );
     if ( !_.keys( remoteParams ).length )
         return config;
@@ -211,7 +211,7 @@ export async function loadConfig( stage ) {
         const ssmConfig = { ..._.get( defaults, "aws.ssm", {} ), ..._.get( config, "aws.ssm", {} ) };
 
         AWS.config.update( awsConfig );
-        return combine( schema, await resolveRemoteProperties( config, stage, ssmConfig ) );
+        return combine( schema, await resolveRemoteParameters( config, stage, ssmConfig ) );
     } );
 }
 
