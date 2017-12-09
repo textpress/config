@@ -187,6 +187,57 @@ Object {
 }
 `;
 
+exports[`config loadConfig works when node environment is production and stage is not provided 1`] = `
+Array [
+  "getParametersByPath",
+  Object {
+    "MaxResults": 10,
+    "NextToken": undefined,
+    "Path": "/textpress-ci",
+    "Recursive": true,
+    "WithDecryption": true,
+  },
+  [Function],
+]
+`;
+
+exports[`config loadConfig works when node environment is production and stage is not provided 2`] = `
+Object {
+  "aws": Object {
+    "defaults": Object {
+      "region": "us-east-1",
+      "sslEnabled": true,
+    },
+    "sqs": Object {
+      "defaults": Object {},
+      "rendering": Object {
+        "DelaySeconds": 0,
+        "QueueUrl": "https://sqs.region.amazonaws.com/accountId/queue-name",
+      },
+    },
+    "ssm": Object {},
+  },
+  "defaultValue": "THIS IS DEFAULT VALUE",
+  "env": "production",
+  "github": Object {
+    "baseUrl": "https://api.github.com",
+    "token": "github/token value",
+  },
+  "inspect": [Function],
+  "jenkins": Object {
+    "auth": Object {
+      "password": "jenkins/auth/password value",
+      "user": "jenkins/auth/user value",
+    },
+    "baseUrl": "http://localhost",
+    "token": "jenkins/token value",
+  },
+  "port": 4000,
+  "signatureSecret": "signatureSecret value",
+  "toString": [Function],
+}
+`;
+
 exports[`config loadConfig works when node environment is production and stage is provided 1`] = `
 Array [
   "getParametersByPath",

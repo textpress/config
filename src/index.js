@@ -209,7 +209,7 @@ function extractDefaults( schema ) {
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
         if ( deploymentType() === "production" && !stage )
-            throw new ConfigError( "Production deployment remote config requires non empty stage" );
+            console.warn( "CONFIG: stage is not provided, remote parameters will be resolved without stage consideration" );
 
         const defaults = extractDefaults( schema );
         const awsConfig = { ..._.get( defaults, "aws.defaults", {} ), ..._.get( config, "aws.defaults", {} ) };

@@ -10,7 +10,8 @@ import sinon from "sinon";
 import _ from "lodash";
 
 import remoteTestConfig from "./__fixtures__/remoteConfig/test.json";
-import ssmTestsResponse from "./__fixtures__/ssm-response.json";
+import ssmTestResponse from "./__fixtures__/ssm-response.json";
+import ssmNoStageResponse from "./__fixtures__/ssm-no-stage-response.json";
 
 
 describe( "config", () => {
@@ -22,7 +23,7 @@ describe( "config", () => {
     let ssmStub = sandbox.spy();
 
     beforeEach( function () {
-        ssmStub = sandbox.stub( AWS.Service.prototype, "makeRequest" ).yields( null, ssmTestsResponse );
+        ssmStub = sandbox.stub( AWS.Service.prototype, "makeRequest" ).yields( null, ssmTestResponse );
     } );
 
     afterEach( function () {
@@ -129,16 +130,17 @@ describe( "config", () => {
             expect( cfg ).toMatchSnapshot();
         } );
 
-        it( "fails when node environment is production and stage is not provided", async () => {
+        it( "works when node environment is production and stage is not provided", async () => {
             process.env.NODE_ENV = "production";
             process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "remoteConfig" );
 
-            expect.assertions( 1 );
-            try {
-                await config.loadConfig();
-            } catch ( x ) {
-                expect( x ).toBeInstanceOf( ConfigError );
-            }
+            ssmStub.yields( null, ssmNoStageResponse );
+
+            const cfg = await config.loadConfig();
+            expect( ssmStub.calledOnce ).toBe( true );
+            expect( ssmStub.args[0] ).toMatchSnapshot();
+            expect( Immutable.isImmutable( cfg ) ).toBe( true );
+            expect( cfg ).toMatchSnapshot();
         } );
 
 
