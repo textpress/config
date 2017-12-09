@@ -4,7 +4,7 @@
     "description": "Config from local files with ability to pull values from SSM",
     "main": "lib/index.js",
     "scripts": {
-        "test": "jest --coverage --colors",
+        "test": "DEBUG=textpress:* jest --coverage --colors",
         "test-update-snapshots": "jest -u",
         "bump": "gulp bump --part",
         "build": "yarn build:clean && yarn build:lib && yarn build:docs",
@@ -32,6 +32,7 @@
         "@textpress/extendable-error": "*",
         "aws-sdk": "*",
         "bluebird": "*",
+        "debug": "*",
         "lodash": "*",
         "seamless-immutable": "*"
     },
@@ -44,6 +45,7 @@
         "bluebird": ">=3.5.0",
         "conventional-github-releaser": "^2.0.0",
         "cpx": "^1.5.0",
+        "debug": "^3.1.0",
         "esdoc": "^1.0.4",
         "esdoc-ecmascript-proposal-plugin": "^1.0.0",
         "esdoc-standard-plugin": "^1.0.0",

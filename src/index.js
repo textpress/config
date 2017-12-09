@@ -10,6 +10,9 @@ import _ from "lodash";
 import path from "path";
 import Immutable from "seamless-immutable";
 
+import Debug from "debug";
+const debug = Debug( "textpress:config" );
+
 function configDir() {
     return process.env.NODE_CONFIG_DIR || path.join( process.cwd(), "config" );
 }
@@ -39,7 +42,6 @@ function fileExist( path ) {
 function loadConfigFile( root, name, required ) {
     name = `${name}.json`;
     const filePath = path.join( root, name );
-    console.log( "Loading config file: ", filePath );
     try {
         if ( fileExist( filePath ) )
             return JSON.parse( fs.readFileSync( filePath, { encoding: "utf8" } ) );
@@ -150,6 +152,7 @@ async function resolveRemoteProperties( config, stage, ssmConfig ) {
 function combine( schema, config ) {
     const combiner = convict( schema );
     combiner.load( config );
+    debug( "Config: %s", combiner );
     combiner.validate();
     const result = combiner.getProperties();
     const string = combiner.toString();
