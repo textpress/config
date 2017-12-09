@@ -118,7 +118,18 @@ describe( "config", () => {
         } );
 
 
-        it( "fails if node environment is production and stage is not provided", async () => {
+        it( "works when node environment is production and stage is provided", async () => {
+            process.env.NODE_ENV = "production";
+            process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "remoteConfig" );
+
+            const cfg = await config.loadConfig( "test" );
+            expect( ssmStub.calledOnce ).toBe( true );
+            expect( ssmStub.args[0] ).toMatchSnapshot();
+            expect( Immutable.isImmutable( cfg ) ).toBe( true );
+            expect( cfg ).toMatchSnapshot();
+        } );
+
+        it( "fails when node environment is production and stage is not provided", async () => {
             process.env.NODE_ENV = "production";
             process.env.NODE_CONFIG_DIR = path.join( __dirname, "__fixtures__", "remoteConfig" );
 

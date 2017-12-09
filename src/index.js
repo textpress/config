@@ -149,8 +149,10 @@ function loadLocalFiles( root ) {
 async function resolveRemoteParameters( config, stage, ssmConfig ) {
     debug( "Resolving remote parameters" );
     const remoteParams = extractRemoteParameters( stage ? `/${stage}` : "", config );
-    if ( !_.keys( remoteParams ).length )
+    if ( !_.keys( remoteParams ).length ) {
+        debug( "  no remote parameters found" );
         return config;
+    }
     const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), ssmConfig );
 
     debug( "Applying remote parameters" );
@@ -206,7 +208,7 @@ function extractDefaults( schema ) {
 
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
-        if ( deploymentType() === "production" && "stage" )
+        if ( deploymentType() === "production" && !stage )
             throw new ConfigError( "Production deployment remote config requires non empty stage" );
 
         const defaults = extractDefaults( schema );
