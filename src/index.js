@@ -132,18 +132,23 @@ async function resolveRemoteProperties( config, stage, ssmConfig ) {
     if ( !_.keys( remoteParams ).length )
         return config;
     const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), ssmConfig );
+    debug( "Remote config: %O", remoteConfig );
+
+    debug( "Applying remove config" );
     _.forEach( remoteParams, ( remote, local ) => {
         const value = remoteConfig[ remote ];
-        if ( value !== undefined )
-            _.set( config, local, remoteConfig[ remote ] );
-        else {
+        if ( value !== undefined ) {
+            debug( "  %s: %s", local, remote );
+            _.set( config, local, value );
+        } else {
             _.unset( config, local );
             const root = remote + "/";
             _.forEach( remoteConfig, ( value, remote ) => {
                 if ( !remote.startsWith( root ) )
                     return;
                 const localPath = `${local}.${remote.substr( root.length ).replace( /\//g, "." ) }`;
-                _.set( config, localPath, remoteConfig[ remote ] )
+                debug( "  %s: %s", localPath, remote );
+                _.set( config, localPath, value )
             } );
         }
     } );
