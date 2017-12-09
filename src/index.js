@@ -95,17 +95,15 @@ export function findCommonRemoteParametersRoot( remoteParams ) {
 }
 
 async function loadRemoteConfig( path, ssmConfig ) {
-    debug( "Loading remote config %s", path );
+    debug( "Loading remote parameters %s", path );
     const ssm = new AWS.SSM( ssmConfig );
     const getParametersByPath = Promise.promisify( ssm.getParametersByPath, { context: ssm } );
 
     const result = {};
     const params = { Path: path, Recursive: true, WithDecryption: true, MaxResults: 10 };
     do {
-        const response = await getParametersByPath( params );
-        debug( "  response: %o", response );
+        const { Parameters, NextToken } = await getParametersByPath( params );
 
-        const { Parameters, NextToken } = response;
         if ( !Parameters || !Parameters.length )
             break;
 
@@ -121,8 +119,6 @@ async function loadRemoteConfig( path, ssmConfig ) {
         );
 
     } while ( params.NextToken );
-
-    debug( "Remote config: \n  %O", result );
 
     return result;
 }
@@ -147,12 +143,13 @@ function loadLocalFiles( root ) {
 
 
 async function resolveRemoteParameters( config, stage, ssmConfig ) {
+    debug( "Resolving remote parameters" );
     const remoteParams = extractRemoteParameters( stage ? `/${stage}` : "", config );
     if ( !_.keys( remoteParams ).length )
         return config;
     const remoteConfig = await loadRemoteConfig( findCommonRemoteParametersRoot( remoteParams ), ssmConfig );
 
-    debug( "Applying remote config" );
+    debug( "Applying remote parameters" );
     _.forEach( remoteParams, ( remote, local ) => {
         const value = remoteConfig[ remote ];
         if ( value !== undefined ) {
@@ -176,7 +173,6 @@ async function resolveRemoteParameters( config, stage, ssmConfig ) {
 function combine( schema, config ) {
     const combiner = convict( schema );
     combiner.load( config );
-    debug( "Config: %s", combiner );
     combiner.validate();
     const result = combiner.getProperties();
     const string = combiner.toString();
