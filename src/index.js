@@ -39,6 +39,7 @@ function fileExist( path ) {
 function loadConfigFile( root, name, required ) {
     name = `${name}.json`;
     const filePath = path.join( root, name );
+    console.log( "Loading config file: ", filePath );
     try {
         if ( fileExist( filePath ) )
             return JSON.parse( fs.readFileSync( filePath, { encoding: "utf8" } ) );
