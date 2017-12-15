@@ -29,8 +29,8 @@ function configFileNames() {
     if ( fullHostName ) {
         const shortHostName = fullHostName.substr( 0, fullHostName.indexOf( "." ) );
         if ( shortHostName )
-            result = result.concat( [ shortHostName, `${shortHostName}-${deployment}` ] );
-        result = result.concat( [ fullHostName, `${fullHostName}-${deployment}` ] );
+            result = result.concat( [ shortHostName, `${shortHostName}.${deployment}` ] );
+        result = result.concat( [ fullHostName, `${fullHostName}.${deployment}` ] );
     }
 
     return result;
