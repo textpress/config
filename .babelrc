@@ -1,7 +1,7 @@
 {
   "presets": [ [ "@textpress/babel-preset-textpress", {
     "targets": {
-      "node": "6.10.2"
+      "node": "8.10"
       }
   } ] ]
 }
