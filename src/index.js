@@ -147,6 +147,9 @@ function loadLocalFiles( root ) {
 
 
 async function resolveRemoteParameters( config, stage, ssmConfig ) {
+    if ( deploymentType() === "production" && !stage )
+        console.log( "CONFIG: stage is not provided, remote parameters will be resolved without stage consideration" );
+
     debug( "Resolving remote parameters" );
     const remoteParams = extractRemoteParameters( stage ? `/${stage}` : "", config );
     if ( !_.keys( remoteParams ).length ) {
@@ -208,9 +211,6 @@ function extractDefaults( schema ) {
 
 export async function loadConfig( stage ) {
     return await loadConfigImpl( async ( schema, config ) => {
-        if ( deploymentType() === "production" && !stage )
-            console.warn( "CONFIG: stage is not provided, remote parameters will be resolved without stage consideration" );
-
         const defaults = extractDefaults( schema );
         const awsConfig = { ..._.get( defaults, "aws.defaults", {} ), ..._.get( config, "aws.defaults", {} ) };
         const ssmConfig = { ..._.get( defaults, "aws.ssm", {} ), ..._.get( config, "aws.ssm", {} ) };
